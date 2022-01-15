@@ -809,6 +809,10 @@ trainn:Toggle("Auto Striking Speed", false, function(b)
 	while _G.Enabled do
 		if not _G.Enabled then break end
 		if not game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("SpeedTraining") then
+
+			if autoeat == true then
+				repeat wait() until autoeat == false
+			end
 			repeat
 				fireclickdetector(Training().Parent.ClickDetector, 3)
 				wait(0.5)
@@ -959,18 +963,16 @@ misc:Toggle("Freeze Stamina", false, function(bool)
 
 	while _G.Freeze do
 		if not _G.Freeze then break end
-		local rgn = 4/100
-		local idea = maxstam / 800
-		local xz = idea * rgn * maxstam
-		local curstam = game.Players.LocalPlayer.Character.CurrentStamina.Value
-		local maxstam = game.Players.LocalPlayer.Character.MaxStamina.Value
-		local stamin = (curstam / maxstam) * 100
-		local amount = _G.FreezePercent or 50
+		
+		curstam = game.Players.LocalPlayer.Character.CurrentStamina.Value
+		maxstam = game.Players.LocalPlayer.Character.MaxStamina.Value
+		stamin = (curstam / maxstam) * 100
+		amount = _G.FreezePercent or 50
 
 		if stamin <= amount then
-			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(remotesecurity, "Dash", {xz * -1, 0})
+			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(remotesecurity, "Dash", {(maxstam/75) * -1.2, -50})
 		elseif stamin > amount then
-			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(remotesecurity, "Dash", {xz * 1, 0})
+			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(remotesecurity, "Dash", {(maxstam/75) * 1.2, 50})
 		end
 		wait(.1)
 	end
