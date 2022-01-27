@@ -1,4 +1,4 @@
-local msg = messagebox("KevHub", "Jou Ohn might or might not have logs for inf Stamina, do you wish to continue?", 1)
+local msg = messagebox("Jou Ohn might or might not have logs for inf Stamina, do you wish to continue?", "KevHub", 1)
 
 if msg == 1 then
 elseif msg == 2 then
