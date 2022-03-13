@@ -52,6 +52,7 @@ local msg = {
 	}}
 }
 
+
 local remotesecurity
 for i,v in pairs(getgc()) do
 	if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
