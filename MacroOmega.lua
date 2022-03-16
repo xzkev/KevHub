@@ -387,6 +387,8 @@ local function SStrike()
 						m2();
 					end)
 				end)
+					
+				wait(.5);
 			until SpeedTraining.CanHit.Value == false
 		end
 	end)
