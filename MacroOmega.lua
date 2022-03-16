@@ -967,30 +967,6 @@ stat:Label("Calories: "..statss.Calories)
 stat:Label("Hunger: "..statss.Stomach)
 stat:Label("BodyFatigue: "..statss.BodyFatigue)
 
-for i,v in pairs(game:GetService("CoreGui")[_G.UIName]:GetDescendants()) do
-	if string.match(v.Name, "|stat") == "|stat" then
-		table.insert(statlabels, v)
-	end
-end
-
-game:GetService("RunService").RenderStepped:Connect(function()
-	statlabels[1].Text = "Durability: "..statss.Durability
-	statlabels[2].Text = "UpperMuscle: "..statss.UpperBodyMuscle
-	statlabels[3].Text = "LowerMuscle: "..statss.LowerBodyMuscle
-	statlabels[4].Text = "RunSpeed: "..statss.RunningSpeed
-	statlabels[5].Text = "Stamina: "..statss.Stamina
-	statlabels[6].Text = "StrikingPower: "..statss.StrikingPower
-	statlabels[7].Text = "StrikingSpeed: "..statss.StrikingSpeed
-	statlabels[8].Text = "Fat: "..statss.Fat
-	statlabels[9].Text = "Trait: "..statss.Trait
-	statlabels[10].Text = "Height: "..statss.Height
-	statlabels[11].Text = "BreadCount: "..statss.Money
-	statlabels[12].Text = "Calories: "..statss.Calories
-	statlabels[13].Text = "Hunger: "..statss.Stomach
-	statlabels[14].Text = "BodyFatigue: "..statss.BodyFatigue
-end)
-
-
 misc:Textbox("Food Priority", "Type Here", false, function(v)
 	_G.Food = v
 end)
