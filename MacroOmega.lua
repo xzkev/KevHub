@@ -379,12 +379,13 @@ local function SStrike()
 				if not SpeedTraining then break end
 				if not root then break end
 				if not _G.Enabled then break end
-
+				
+				wait(0.02)
 				click()
-				wait(0.01)
+				wait(0.02)
 				m2()
 				if SpeedTraining.CanHit.Value == true then
-					wait(1.1)
+					wait(0.7)
 				end
 			until SpeedTraining.CanHit.Value == false
 		end
