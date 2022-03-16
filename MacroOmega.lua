@@ -380,13 +380,13 @@ local function SStrike()
 				if not root then break end
 				if not _G.Enabled then break end
 				
-				wait(0.02)
-				click()
-				wait(0.02)
-				m2()
-				if SpeedTraining.CanHit.Value == true then
-					wait(0.7)
-				end
+				delay(0.1, function()
+					click();
+					
+					delay(0.1, function()
+						m2();
+					end)
+				end)
 			until SpeedTraining.CanHit.Value == false
 		end
 	end)
@@ -739,7 +739,7 @@ end
 
 local DiscordLib = loadstring(game:HttpGet "https://raw.githubusercontent.com/xzkev/KevHub/main/DiscordLib")()
 local win = DiscordLib:Window("Macro Omega")
-local serv = win:Server("v0.04", "")
+local serv = win:Server("v0.041", "")
 local trainn = serv:Channel("Training")
 local machine = serv:Channel("Machines")
 local stat = serv:Channel("Stat Viewer")
