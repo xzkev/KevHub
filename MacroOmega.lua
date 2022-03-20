@@ -58,7 +58,8 @@ for i,v in pairs(getgc()) do
 	if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
 		if type(v) == "function" then
 			for I2,V2 in pairs(debug.getupvalues(v)) do
-				if I2 == 21 then 
+				if I2 == 21 then
+					_G.Key = V2
 					remotesecurity = V2  
 				end
 			end
@@ -71,7 +72,8 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function(ma)
 		if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
 			if type(v) == "function" then
 				for I2,V2 in pairs(debug.getupvalues(v)) do
-					if I2 == 21 then 
+					if I2 == 21 then
+						_G.Key = V2
 						remotesecurity = V2  
 					end
 				end
