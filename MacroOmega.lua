@@ -73,30 +73,16 @@ function getKey()
 	for i,v in pairs(getgc()) do
 	if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
 		if type(v) == "function" then
-			game:GetService("RunService").RenderStepped:Connect(function()
 			for I2,V2 in pairs(debug.getupvalues(v)) do
 				if I2 == 21 then
 					_G.Key = V2
 					remotesecurity = V2  
 				end
 			end
-			end)
 		end
 	end
 end
 end
-
-game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
-	local timestart = os.clock();
-	game.Players.LocalPlayer.Character.Humanoid.Died:Connect(getKey)
-	game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
-		char:WaitForChild("Humanoid", 7).Died:Connect(function() print("Getting Key") end)
-		repeat wait()
-			if os.clock() - timestart > 9 then break end
-			getKey();
-		until os.clock() - timestart > 9
-	end)
-end)
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function(ma)
 	for i,v in pairs(getgc()) do
@@ -788,7 +774,7 @@ end
 
 local DiscordLib = loadstring(game:HttpGet "https://raw.githubusercontent.com/xzkev/KevHub/main/DiscordLib")()
 local win = DiscordLib:Window("Macro Omega")
-local serv = win:Server("v0.0411", "")
+local serv = win:Server("v0.0412", "")
 local trainn = serv:Channel("Training")
 local machine = serv:Channel("Machines")
 local stat = serv:Channel("Stat Viewer")
