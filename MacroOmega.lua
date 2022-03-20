@@ -88,9 +88,9 @@ end
 
 game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
 	local timestart = os.clock();
-	game.Players.LocalPlayer.Character.Humanoid.Died:Connect(lawg)
+	game.Players.LocalPlayer.Character.Humanoid.Died:Connect(getKey)
 	game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
-		char:WaitForChild("Humanoid", 7).Died:Connect(function() print("h") end)
+		char:WaitForChild("Humanoid", 7).Died:Connect(function() print("Getting Key") end)
 		repeat wait()
 			if os.clock() - timestart > 9 then break end
 			getKey();
