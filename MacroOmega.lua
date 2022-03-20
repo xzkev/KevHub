@@ -788,7 +788,7 @@ end
 
 local DiscordLib = loadstring(game:HttpGet "https://raw.githubusercontent.com/xzkev/KevHub/main/DiscordLib")()
 local win = DiscordLib:Window("Macro Omega")
-local serv = win:Server("v0.041", "")
+local serv = win:Server("v0.0411", "")
 local trainn = serv:Channel("Training")
 local machine = serv:Channel("Machines")
 local stat = serv:Channel("Stat Viewer")
