@@ -54,24 +54,9 @@ local msg = {
 
 
 local remotesecurity
-for i,v in pairs(getgc()) do
-	if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
-		if type(v) == "function" then
-			game:GetService("RunService").RenderStepped:Connect(function()
-			for I2,V2 in pairs(debug.getupvalues(v)) do
-				if I2 == 21 then
-					_G.Key = V2
-					remotesecurity = V2  
-				end
-			end
-			end)
-		end
-	end
-end
-
-function getKey()
+game["Run Service"].Stepped:Connect(function()
 	for i,v in pairs(getgc()) do
-	if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
+	    if getfenv(v).script and getfenv(v).script.Name == "LocalS" and getfenv(v).script.Parent == game.Players.LocalPlayer.Backpack then
 		if type(v) == "function" then
 			for I2,V2 in pairs(debug.getupvalues(v)) do
 				if I2 == 21 then
@@ -79,25 +64,10 @@ function getKey()
 					remotesecurity = V2  
 				end
 			end
-		end
+		    end
+	    end
 	end
-end
-end
-
-game.Players.LocalPlayer.CharacterAdded:Connect(function(ma)
-	for i,v in pairs(getgc()) do
-		if getfenv(v).script and getfenv(v).script.Name == "LocalS" then
-			if type(v) == "function" then
-				for I2,V2 in pairs(debug.getupvalues(v)) do
-					if I2 == 21 then
-						_G.Key = V2
-						remotesecurity = V2  
-					end
-				end
-			end
-		end
-	end
-end)
+    end)
 
 for I,V in pairs(getgc()) do
 	if getfenv(V).script and getfenv(V).script.Name == "LocalS" then
