@@ -86,6 +86,12 @@ Discord.Name = _G.UIName
 Discord.Parent = game.CoreGui
 Discord.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+game:GetService("UserInputService").InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.RightControl then
+		Discord.Enabled = not Discord.Enabled;
+	end
+end)
+
 function DiscordLib:Window(text)
 	local currentservertoggled = ""
 	local minimized = false
