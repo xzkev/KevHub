@@ -382,15 +382,10 @@ local function SStrike()
 				if not SpeedTraining then break end
 				if not root then break end
 				if not _G.Enabled then break end
-				
-				delay(0.1, function()
-					click();
-					wait(.1)
-					delay(0.1, function()
-						m2();
-					end)
-				end)
 					
+				click();
+				wait(.15);
+				m2();
 				wait(.5);
 			until SpeedTraining.CanHit.Value == false
 		end
