@@ -385,7 +385,7 @@ local function SStrike()
 				
 				delay(0.1, function()
 					click();
-					
+					wait(.1)
 					delay(0.1, function()
 						m2();
 					end)
