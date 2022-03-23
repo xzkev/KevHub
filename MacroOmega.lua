@@ -1038,9 +1038,9 @@ misc:Toggle("Freeze Stamina", false, function(bool)
 		local c = maxstam / 15
 
 		if stamin < amount then
-			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(remotesecurity, "Dash", {a * -1, 0})
+			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(_G.Key, "Dash", {a * -1, 0})
 		elseif stamin > amount * 1.075 then
-			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(remotesecurity, "Dash", {b * 1, 0})
+			game:GetService("Players").LocalPlayer.Backpack.Action:FireServer(_G.Key, "Dash", {b * 1, 0})
 		end
 
 		wait(.1)
