@@ -645,7 +645,7 @@ function library:Window(options)
                         end)
 
                         local toggle_functions = {}
-
+                        
                         function toggle_functions:SetState(State)
                             if State == true then 
                                 toggled = true
@@ -1080,7 +1080,11 @@ function library:Window(options)
                         end)
 
                         local slider_functions = {}
-
+                        
+                        function slider_functions:Delete()
+                            slider_holder:Destroy();
+                        end
+                        
                         function slider_functions:UpdateSlider(Def)
                             local value = tostring(Def and math.floor((Def / Max) * (Max - Min) + Min) or 0) .. '/' .. tostring(Max)
                             slider_text.Text = value
