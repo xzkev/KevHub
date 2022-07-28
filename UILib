@@ -919,6 +919,10 @@ function library:Window(options)
                         end
 
                         local dropdown_functions = {}
+                        
+                        function dropdown_functions:UpdateText(Text)
+                            uiDropdown.Text = Title .. ' - ' .. Text
+                        end
 
                         function dropdown_functions:UpdateList(List)
                             local List = List or {}
