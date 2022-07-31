@@ -1,2 +1,1 @@
-rconsoleprint('Version 1.0.0, Executed\n');
-loadstring(game:HttpGet('https://raw.githubusercontent.com/xzkev/KevHub/main/SetAttributeWorld4', true)();
+'https://raw.githubusercontent.com/xzkev/KevHub/main/SetAttributeWorld4'
